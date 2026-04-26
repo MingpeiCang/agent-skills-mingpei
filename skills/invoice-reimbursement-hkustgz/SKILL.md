@@ -22,10 +22,10 @@ Fill the bundled reimbursement template from invoice contents and return a compl
 2. Unpack any zip archive and collect invoice files.
 3. Extract each invoice line item, totals, and any discount/reduction lines.
 4. Map fields exactly:
-   - 物品名称 = 项目名称
-   - 品牌型号 = 规格型号, blank if spec/model is blank
+   - 物品名称 = 发票项目名称
+   - 品牌型号 = 发票规格型号, blank if spec/model is blank
    - 单价 = (金额 + 税额) / 数量
-   - 数量 = 数量
+   - 数量 = 发票数量
    - 总价 = 金额 + 税额 - 折让或减价
    - 备注 = 留空
 5. Keep one row per invoice line item.
