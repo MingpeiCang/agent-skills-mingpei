@@ -1,35 +1,45 @@
-# invoice-reimbursement-hkustgz
+# agent-skills-mingpei
 
-A portable skill for filling HKUST(GZ) reimbursement Word templates from invoice files.
+Mingpei Cang's personal Codex skill repository.
 
-## Included skill
+## Included skills
 
 ### `invoice-reimbursement-hkustgz`
-Fill a reimbursement Word template from one or more invoices and output a completed DOCX.
+Fill a HKUST(GZ) reimbursement Word template from one or more invoices and output a completed DOCX.
 
-**Use cases**
+Use cases:
 - invoice PDFs or scanned invoices
 - multiple invoices in one run
 - zip archives containing invoices
-- requests like “帮我填写以下报销单”
 - workflows that must preserve invoice order and map invoice fields into a fixed reimbursement template
 
-**Highlights**
+Highlights:
 - bundles the blank reimbursement template
 - keeps field mapping rules explicit
 - requires `minimax-docx` for Word processing
-- designed for document-heavy agent workflows
+
+### `rewrite-as-ns`
+Rewrite scientific or technical text in a distilled manuscript style while preserving technical meaning and scope.
+
+Use cases:
+- sentence-level manuscript polishing
+- short batch rewriting for papers, reviews, or response letters
+- technical prose cleanup with strict meaning preservation
+- style-guided repair of minor citation debris or formatting noise
+
+Highlights:
+- emphasizes meaning preservation over aggressive rewriting
+- separates core style imitation from editorial overlay
+- bundles references for quality gate, protected spans, and line-edit discipline
 
 ## Compatibility
 
-This skill is intended to stay usable across multiple agent environments, including OpenClaw and Claude Code-style workflows.
+These skills are intended to stay usable across multiple agent environments, including Codex-style and OpenClaw-style workflows.
 
 ## Structure
 
 ```text
-invoice-reimbursement-hkustgz/
-├── SKILL.md
-├── references/
-├── scripts/
-└── assets/
+skills/
+  invoice-reimbursement-hkustgz/
+  rewrite-as-ns/
 ```
