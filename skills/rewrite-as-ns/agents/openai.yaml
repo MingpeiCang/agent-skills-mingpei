@@ -1,0 +1,7 @@
+interface:
+  display_name: "Rewrite as NS"
+  short_description: "Scientific style rewrite with editorial feedback"
+  default_prompt: "Use $rewrite-as-ns to rewrite scientific sentences in the distilled target style and append concise editor feedback."
+
+policy:
+  allow_implicit_invocation: true
