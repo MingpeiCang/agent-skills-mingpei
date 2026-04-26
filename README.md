@@ -32,6 +32,35 @@ Highlights:
 - separates core style imitation from editorial overlay
 - bundles references for quality gate, protected spans, and line-edit discipline
 
+## Repository conventions
+
+Each skill lives under `skills/<skill-name>/` and should keep only files that are necessary for portable reuse.
+
+Recommended layout:
+
+```text
+skills/<skill-name>/
+  SKILL.md
+  README.md                  # optional but recommended
+  references/                # required when the skill depends on bundled guidance
+  scripts/                   # optional helper code
+  assets/                    # optional bundled files such as templates
+  agents/                    # optional agent/provider-specific config
+```
+
+Rules:
+- `SKILL.md` is the required entry point.
+- Keep skill names lowercase and hyphenated.
+- Put reusable guidance in `references/`, not in the root `README.md`.
+- Put runnable helpers in `scripts/`.
+- Put binary templates or other bundled resources in `assets/`.
+- Use `agents/` only for provider-specific config that must ship with the skill.
+- Keep repository-level docs generic; put task-specific instructions inside the skill folder.
+
+## Templates
+
+- Use [templates/skill-README-template.md](C:/Users/admin/.codex/tmp/agent-skills-mingpei/templates/skill-README-template.md) as the default README template for new skills.
+
 ## Compatibility
 
 These skills are intended to stay usable across multiple agent environments, including Codex-style and OpenClaw-style workflows.
@@ -39,6 +68,8 @@ These skills are intended to stay usable across multiple agent environments, inc
 ## Structure
 
 ```text
+templates/
+  skill-README-template.md
 skills/
   invoice-reimbursement-hkustgz/
   rewrite-as-ns/
