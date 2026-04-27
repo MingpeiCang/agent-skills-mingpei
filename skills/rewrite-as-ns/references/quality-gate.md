@@ -12,7 +12,8 @@ The rewrite must preserve:
 - polarity
 - modality and hedge strength
 - causal and contrast relations
-- sentence count, unless the source already needs semicolon-scale punctuation
+- source sentence boundaries by default
+- sentence-count changes only when boundary planning justifies a merge or split under explicit safety rules
 
 ## Source Repair Rules
 
@@ -42,6 +43,21 @@ Ask these in order:
 4. If the source is noisy, is the intended wording still recoverable?
 
 Choose the least aggressive rewrite that produces a better sentence.
+
+## Boundary Safety Check
+
+Before you return the rewrite, confirm:
+
+1. Did I decide any merge or split before rewriting rather than during ad hoc sentence polishing?
+2. Did I preserve every technical claim?
+3. Did I preserve every number, unit, qualifier, and named entity?
+4. Did I keep the same hedge strength?
+5. Did I preserve the causal, contrastive, and inferential relations?
+6. Did I preserve every protected span exactly?
+7. Did I record the source-to-output mapping when boundaries changed?
+8. Does the boundary change improve clarity rather than merely changing sentence count?
+
+If any answer is `no`, revise the rewrite.
 
 ## Self-Check Questions
 

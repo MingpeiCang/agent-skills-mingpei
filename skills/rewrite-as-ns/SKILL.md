@@ -44,14 +44,22 @@ This skill operates through two tightly coupled layers:
 ## Core Workflow
 
 1. Determine the unit of work and the requested output format.
-2. Classify the source sentence by rhetorical function.
-3. Choose the rewrite mode:
+2. Plan sentence boundaries for the current unit.
+3. Classify the resulting unit by rhetorical function.
+4. Choose the rewrite mode:
    - `minimal_polish`
    - `structural_rewrite`
    - `repair_rewrite`
-4. Rewrite the sentence.
-5. Run the quality gate before returning the result.
-6. Return the rewritten text followed by concise `editor_feedback`, unless the user explicitly asks for a different review or table format.
+5. Rewrite the unit.
+6. Run the quality gate before returning the result.
+7. Return the rewritten text followed by concise `editor_feedback`, unless the user explicitly asks for a different review or table format.
+
+## Boundary Planning
+
+- preserve source sentence boundaries by default
+- allow automatic merge or split only when the user has not forbidden boundary changes and the clarity gain is clear
+- make boundary decisions before rhetorical classification and rewrite-mode selection
+- preserve source-to-output mapping whenever a merge or split occurs so batch output and feedback can report it
 
 ## Rewrite Modes
 
@@ -63,14 +71,18 @@ If the damage is meaning-critical and not reconstructable, say so briefly instea
 
 ## Batch Rules
 
-- Keep one row per source sentence unless the user explicitly asks for merged prose.
+- Keep one row per source sentence by default.
+- If boundary planning approves a merge or split, allow `many-to-one` or `one-to-many` output only when the source-to-output mapping is preserved.
 - Preserve source order unless the user explicitly asks for reorganization.
 - For tabular output, default columns are:
   - `id`
+  - `source_ids`
+  - `boundary_action`
   - `function_group`
   - `source_text`
   - `rewritten_text`
   - `editor_feedback`
+- Use `boundary_action` values such as `preserved`, `merged`, or `split`, and use `source_ids` to show which source sentence(s) feed each output unit.
 - For paragraph tasks, preserve local discourse markers and adjacency logic across neighboring sentences.
 - For long articles, vary opener families and reporting verbs across nearby sentences unless the source discourse requires repetition.
 
@@ -80,7 +92,8 @@ If the damage is meaning-critical and not reconstructable, say so briefly instea
 - Do not import topic nouns from examples or from unrelated source sentences.
 - Do not force a template when the source sentence is already strong.
 - Do not inflate claims.
-- Do not split one sentence into two unless the source already requires semicolon-scale structure.
+- Allow sentence merges or splits only when boundary planning approves them under explicit safety rules.
+- Do not let a boundary change alter hedge strength, causal relation, contrast relation, protected spans, or claim scope.
 
 ## When To Stay Conservative
 
@@ -93,6 +106,7 @@ If the damage is meaning-critical and not reconstructable, say so briefly instea
 
 - Direct rewrite request: output the rewritten text first, then append a concise `editor_feedback` block.
 - Review or evaluation request: include clear pairwise fields and short failure notes.
+- When a merge or split occurs, note the `boundary_action` and the reason briefly in `editor_feedback` unless the user explicitly asks for output without feedback.
 - Default `editor_feedback` should be brief and concrete:
   - what changed
   - why the change improves clarity or style

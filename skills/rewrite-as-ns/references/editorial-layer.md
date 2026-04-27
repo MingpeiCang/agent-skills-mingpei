@@ -48,7 +48,8 @@ Example shape:
 
 - improve local flow through syntax before inserting explicit connectives
 - prefer strong clause structure over decorative transitions
-- preserve one-sentence completeness
+- preserve one-sentence completeness within the chosen output unit
+- if boundary planning redefines the output unit, edit within that new unit rather than reverting to the original sentence boundary
 - if the source is already well formed, use minimal editorial intervention
 
 ## User Constraints

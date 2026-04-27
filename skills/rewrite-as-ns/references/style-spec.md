@@ -9,6 +9,7 @@ This file captures the distilled target style. Use it as guidance, not as a temp
 - explicit rhetorical structure when useful
 - one-sentence completeness
 - compact syntax over ornamental paraphrase
+- clear clause architecture within the chosen output unit, whether it preserves the original boundary or follows approved boundary planning
 
 ## Lexical Tendencies
 
