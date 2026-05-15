@@ -35,6 +35,20 @@ High-risk:
 
 Use high-risk frames only when the source already makes an enabling or broad generalization claim.
 
+### Abstract Contribution Templates
+
+These are the signature Nature Abstract patterns:
+
+- `Here we report a [SYSTEM] that [VERB] [PROPERTY] of [VALUE].` (17 occurrences)
+- `Here we show that [SYSTEM] [VERB] [PROPERTY].` (23 occurrences)
+- `Here we demonstrate [METHOD/CLAIM].` (13 occurrences)
+- `Here we present [SYSTEM/METHOD] that [VERB].` (10 occurrences)
+- `We show that [SYSTEM] [VERB] [PROPERTY], [which/both of which] [RESULT].` (34 occurrences)
+- `Our work suggests [IMPLICATION].`
+- `This [METHOD] yields [PROPERTY] of [VALUE], both of which far exceed [BASELINE].`
+
+Use `Here we ...` only in the Abstract or when the source explicitly uses an author-framed contribution sentence. Do not inject it into Results or Methods.
+
 ## Result
 
 Low-risk:
@@ -60,6 +74,37 @@ High-risk:
 - `In contrast, we observe the opposite effect: [SYSTEM] [VERB] [PROPERTY].`
 
 Use the high-risk frame only when the source genuinely contains a contrastive result.
+
+### Results-Specific Templates
+
+Results sections use the highest hedging density (7.2 per 1,000 words) and the most contrast structures.
+
+**Result presentation** (active author frame):
+- `We find that [PROPERTY] [increases/decreases] with [VARIABLE].` (158 occurrences of `find` in Results)
+- `We observe [PHENOMENON] in [SYSTEM].` (171 occurrences of `observe`)
+- `We show that [SYSTEM] [VERB] [PROPERTY].` (482 occurrences of `show`)
+- `Our results indicate that [CLAIM].` (145 occurrences of `indicate`)
+
+**Hedged result presentation:**
+- `These results suggest that [SYSTEM] may [VERB] [PROPERTY].` (163 occurrences of `suggest`)
+- `This observation is consistent with [MODEL/PREDICTION].` (162 occurrences of `consistent`)
+- `We attribute [PHENOMENOM] to [MECHANISM].`
+
+**Contrast structures** (Results has the highest contrast density):
+- `Whereas [SYSTEM_A] [VERB], [SYSTEM_B] [VERB].` (175 occurrences of `whereas` in Results)
+- `Unlike [SYSTEM_A], [SYSTEM_B] [VERB] [PROPERTY].` (23 occurrences)
+- `By contrast, [SYSTEM] [VERB] [PROPERTY].` (80 occurrences)
+- `In contrast, [SYSTEM] [VERB] [PROPERTY].` (37 occurrences)
+
+**Quantitative comparison:**
+- `Compared to [BASELINE], [SYSTEM] shows [PROPERTY] of [VALUE].` (211 occurrences in Results)
+- `[PROPERTY] increases by [FACTOR] compared with [BASELINE].`
+- `[SYSTEM] exceeds [BASELINE] by [FACTOR/ORDERS_OF_MAGNITUDE].`
+
+**Emphasis** (use sparingly):
+- `Notably, [OBSERVATION].` (97 occurrences — Results signature)
+- `[SYSTEM] [VERB] [PROPERTY] by orders of magnitude.` (20 occurrences)
+- `Indeed, [CONFIRMATION].` (67 occurrences in Results)
 
 ## Method
 
@@ -88,6 +133,37 @@ High-risk:
 - `We design [SYSTEM] for high performance under [CONDITION].`
 
 Use high-risk frames only when the source explicitly claims scale or performance design.
+
+### Methods-Specific Templates
+
+Methods sections are 60% passive. Use these patterns when rewriting Methods text:
+
+**Passive constructions** (dominant in Methods):
+- `[SYSTEM] was/were [VERB-ed] using [METHOD].`
+- `[PROPERTY] was determined by [METHOD].`
+- `[SYSTEM] was prepared by [PROCESS].`
+- `Samples were [VERB-ed] at [CONDITION] for [DURATION].`
+- `[PROPERTY] was measured using [INSTRUMENT].`
+- `[VALUE] was obtained from [MEASUREMENT].`
+
+**Active constructions** (less common but acceptable in Methods):
+- `We use [METHOD] to [VERB] [PROPERTY].`
+- `We performed [ANALYSIS] on [SYSTEM].`
+- `We determined [PROPERTY] by [METHOD].`
+
+**Procedural sequencing** (`then` is the #1 Methods adverb, 812 occurrences):
+- `Samples were first [VERB-ed], then [VERB-ed] at [CONDITION].`
+- `After [STEP], [SYSTEM] was [VERB-ed] using [METHOD].`
+- `[SYSTEM] was [VERB-ed] at [CONDITION] for [DURATION], followed by [STEP].`
+
+**Measurement and quantification:**
+- `[PROPERTY] was quantified from [MEASUREMENT] under [CONDITION].`
+- `[PROPERTY] was calculated using [EQUATION/MODEL].`
+- `The [PROPERTY] of [SYSTEM] was measured at [CONDITION].`
+
+**Pairwise comparison** (`respectively` is #6 Methods adverb, 311 occurrences):
+- `[SYSTEM_A] and [SYSTEM_B] had [PROPERTY] of [VALUE_A] and [VALUE_B], respectively.`
+- `Non-reducible and reducible supports served as [SYSTEM_A] and [SYSTEM_B], respectively.`
 
 ## Scope / implication
 

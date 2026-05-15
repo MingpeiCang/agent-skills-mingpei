@@ -15,6 +15,22 @@ Vary the sentence frame while keeping the same distilled voice. The voice comes 
 
 Do not chase novelty with unrelated synonyms.
 
+## Voice and Tense by Section
+
+Match voice and tense to the target section.
+
+| Section | Active % | Passive % | Present | Past | Past Participle |
+|---------|----------|-----------|---------|------|----------------|
+| Abstract | 75% | 25% | 40.8% | 4.2% | 28.0% |
+| Main | 67% | 33% | 38.1% | 7.3% | 29.4% |
+| Results | 69% | 31% | 31.8% | 15.1% | 29.3% |
+| Methods | 40% | 60% | 19.0% | 13.5% | 29.4% |
+
+- **Abstract**: present tense for stating findings, active voice for `Here we ...` patterns
+- **Results**: mix present (general findings) and past (specific experiments). Past simple is highest here (15.1%).
+- **Methods**: predominantly past participle in passive constructions. Present simple for describing apparatus or stating equations.
+- Do not force active voice in Methods — passive is the correct register
+
 ## Transition Economy
 
 Prefer sentence structure and clause order over explicit transitional adverbs when the relation is already clear.
@@ -31,6 +47,31 @@ Avoid transition inflation, for example:
 - repeated `however` where simple clause structure is enough
 - repeated `therefore` where the inference is already obvious
 - repeated `moreover` or `furthermore` used only as stylistic filler
+
+### Section Transition Profiles
+
+Use these frequencies to choose transitions that match the target section register.
+
+| Transition | Abstract | Main | Results | Methods |
+|-----------|----------|------|---------|---------|
+| however | 60 | 194 | 198 | 162 |
+| also | 40 | 317 | 529 | 397 |
+| thus | 17 | 84 | 205 | 151 |
+| therefore | 9 | 105 | 111 | 168 |
+| although | 15 | 116 | 204 | 105 |
+| whereas | 10 | 64 | 175 | 88 |
+| furthermore | 13 | 44 | 81 | 49 |
+| notably | — | — | 97+97 | — |
+| then | 7 | 95 | 154 | 812 |
+| first | 13 | 128 | 198 | 376 |
+| subsequently | — | — | — | 79 |
+| finally | 8 | 30 | 64 | 100 |
+
+Key section patterns:
+- **Abstract**: minimal transitions — the `Here we ...` opener carries the structure. Use `however` (60) and `also` (40) sparingly.
+- **Methods**: `then` dominates (812) — procedural sequencing. `first` (376) and `finally` (100) for step ordering.
+- **Results**: richest transition vocabulary. `whereas` (175) and `notably` (97) are Results-signature words. `also` (529) for additive enumeration.
+- **Main**: balanced, transitional — `however` (194), `also` (317), `although` (116).
 
 ## Repetition Guard
 

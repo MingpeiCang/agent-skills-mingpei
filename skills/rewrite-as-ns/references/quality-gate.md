@@ -73,6 +73,76 @@ Before you return the rewrite, confirm:
 
 If any answer is `no`, revise the rewrite.
 
+## Quantitative Style Checks
+
+Use these as guardrails, not hard limits.
+
+### Sentence Length Check
+
+| Section | Target Range | Flag If Outside |
+|---------|-------------|-----------------|
+| Abstract | 19–30 words | < 10 or > 50 |
+| Main | 18–32 words | < 10 or > 50 |
+| Results | 19–34 words | < 10 or > 60 |
+| Methods | 16–30 words | < 10 or > 50 |
+
+- If the rewrite is significantly longer than the source and outside the target range, tighten it.
+- If the rewrite is significantly shorter, check that no content was lost.
+
+### Voice and Tense Check by Section
+
+| Section | Expected Voice | Expected Tense |
+|---------|---------------|----------------|
+| Abstract | active (75%) | present simple (40.8%) |
+| Main | active (67%) | present simple (38.1%) |
+| Results | active (69%) | present (31.8%) + past (15.1%) |
+| Methods | passive (60%) | past participle (29.4%) |
+
+- If rewriting Methods text, do not force active voice — passive is the correct register.
+- If rewriting Abstract text, do not force past tense — present is standard for stating findings.
+- If rewriting Results text, past simple is acceptable for reporting specific experiments.
+
+### Hedging Balance Check
+
+| Section | Hedge Density (per 1,000 words) |
+|---------|-------------------------------|
+| Abstract | 6.8 |
+| Main | 7.0 |
+| Results | 7.2 |
+| Methods | 3.3 |
+
+- Do not remove hedges that are present in the source unless the user explicitly asks for stronger claims.
+- Do not add hedges that are not in the source.
+- Methods sections should have the lowest hedge density — procedural text does not need `may` or `might`.
+
+### Clause Depth Check
+
+- Target dependency tree depth: 4–9 edges for most sentences
+- Flag sentences with depth 13+ as potential split candidates
+- Methods sections trend shallower (50.5% in 4–6 range) — keep Methods sentences simple
+
+## Overclaim Checklist
+
+Flag and soften claims when:
+
+| Flag word | Safer replacement |
+|-----------|------------------|
+| prove | show, demonstrate, suggest |
+| conclusively | strongly, consistently |
+| unprecedented | to our knowledge, rarely reported |
+| best | among the strongest |
+| unqualified first | to our knowledge, the first to |
+| superior | improved, enhanced |
+| always | in all tested cases |
+| never | in no case examined |
+
+Also flag when:
+- a laboratory result is written as an immediate field-wide solution
+- a single system is described as universally applicable
+- correlation is rewritten as mechanism
+- a comparison lacks a fair baseline
+- a future application is stated as an achieved outcome
+
 ## When Near-Copy Is Correct
 
 A near-copy is acceptable when:

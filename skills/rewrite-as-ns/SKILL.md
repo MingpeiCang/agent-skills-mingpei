@@ -26,13 +26,15 @@ This skill operates through two tightly coupled layers:
 ## Read Order
 
 1. Read [references/style-spec.md](references/style-spec.md) and [references/quality-gate.md](references/quality-gate.md) for any rewrite task.
-2. Read [references/editorial-layer.md](references/editorial-layer.md), [references/protected-spans.md](references/protected-spans.md), and [references/line-edit-playbook.md](references/line-edit-playbook.md) for any rewrite task that resembles manuscript editing.
-3. Read [references/function-map.md](references/function-map.md) if the sentence function is unclear or the batch mixes several function types.
-4. For long-form writing or repeated sentence-by-sentence rewriting, read:
+2. Read [references/writing-strategy.md](references/writing-strategy.md) when the task involves paragraph- or section-level rewriting, argument restructuring, or Chinese-to-English translation.
+3. Read [references/section-moves.md](references/section-moves.md) when rewriting a specific section (Introduction, Results, Discussion, Methods, Conclusion, Abstract, or Title).
+4. Read [references/editorial-layer.md](references/editorial-layer.md), [references/protected-spans.md](references/protected-spans.md), and [references/line-edit-playbook.md](references/line-edit-playbook.md) for any rewrite task that resembles manuscript editing.
+5. Read [references/function-map.md](references/function-map.md) if the sentence function is unclear or the batch mixes several function types.
+6. For long-form writing or repeated sentence-by-sentence rewriting, read:
    - [references/lexicon-bank.md](references/lexicon-bank.md)
    - [references/template-bank.md](references/template-bank.md)
    - [references/variation-playbook.md](references/variation-playbook.md)
-5. Read [references/exemplars.md](references/exemplars.md) when the user wants examples, batch consistency, or closer imitation of the distilled style.
+7. Read [references/exemplars.md](references/exemplars.md) when the user wants examples, batch consistency, or closer imitation of the distilled style.
 
 ## Scope
 
@@ -44,15 +46,26 @@ This skill operates through two tightly coupled layers:
 ## Core Workflow
 
 1. Determine the unit of work and the requested output format.
-2. Plan sentence boundaries for the current unit.
-3. Classify the resulting unit by rhetorical function.
-4. Choose the rewrite mode:
+2. Identify the paper type (research / methods / hypothesis / algorithmic). This governs narrative logic.
+3. Diagnose the failure mode before editing:
+   - wrong paper type logic
+   - missing gap or poor positioning
+   - claim without evidence
+   - evidence without a clear claim
+   - missing boundary or limitation
+   - Results and Discussion mixed together
+   - weak title or abstract signal
+   - sentence-level clutter only
+   Prioritize: `paper type → section job → paragraph logic → claim/evidence/boundary → sentence polish`
+4. Plan sentence boundaries for the current unit.
+5. Classify the resulting unit by rhetorical function.
+6. Choose the rewrite mode:
    - `minimal_polish`
    - `structural_rewrite`
    - `repair_rewrite`
-5. Rewrite the unit.
-6. Run the quality gate before returning the result.
-7. Return the rewritten text followed by concise `editor_feedback`, unless the user explicitly asks for a different review or table format.
+7. Rewrite the unit. Apply the two layers (core style imitation + editorial overlay).
+8. Run the quality gate before returning the result.
+9. Return the rewritten text followed by concise `editor_feedback`, unless the user explicitly asks for a different review or table format.
 
 ## Boundary Planning
 
@@ -101,6 +114,29 @@ If the damage is meaning-critical and not reconstructable, say so briefly instea
 - transition sentences that already have the right opener
 - scope sentences containing `may`, `could`, `can`, `likely`, or similar hedges
 - already polished contribution sentences that only need local cleanup
+
+## Claim-Evidence-Boundary
+
+Every important scientific statement should have three parts:
+
+1. **Claim**: what is being said
+2. **Evidence**: what supports it
+3. **Boundary**: where the claim stops, or what uncertainty remains
+
+When polishing, repair these failures before polishing rhythm:
+- claim without evidence → add data, citation, or mechanism
+- data without an explicit point → surface the finding
+- implication without a scope condition → add boundary language
+
+## Chinese-to-English Mode
+
+When the source is Chinese or strongly Chinese-influenced English:
+
+1. Extract core propositions first — do not translate clause-by-clause
+2. Reconstruct explicit logical links: contrast, cause, implication, limitation
+3. Verify terminology, causality, hedging, and disciplinary nuance
+4. Keep key technical terms stable
+5. Remove Chinese discourse patterns (e.g., excessive `With the development of...`, `In recent years, more and more...`)
 
 ## Deliverables
 
